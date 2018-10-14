@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.zip.CheckedInputStream;
 
 public class Lesson02 {
 
@@ -29,9 +28,7 @@ public class Lesson02 {
                 "\n  quit           q");
 
         for (;;) {
-
             System.out.print("Type \'w\' for calculations or \'q\' for exit and press \"Enter\" -> ");
-
             String str = scanner.next();
             // выход при нажатии q
             if("q".equals(str)) {
@@ -39,9 +36,7 @@ public class Lesson02 {
             }
 
             x = setValue("x");
-
             action = choiceOperation();
-
             y = setValue("y");
 
             switch (action) {
@@ -58,12 +53,10 @@ public class Lesson02 {
                     result = x / y;
                     break;
             }
-
             System.out.println("Result = " + result);
         }
         System.out.println("Good bye!");
     }
-
 
     static double setValue(String varName) {
 
