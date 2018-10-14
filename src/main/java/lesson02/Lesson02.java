@@ -9,17 +9,13 @@ public class Lesson02 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        InputStreamReader in = new InputStreamReader(System.in);
-
-        double x = 0;
-        double y = 0;
+        double x;
+        double y;
         double result = 0;
-
-        char action = ' ';
+        char action;
 
         System.out.println("\n");
         System.out.println("Calculator VOROBEYCALC 1.0\n");
-
         System.out.println("List of possible operations: " +
                 "\n  summation      + " +
                 "\n  subtraction    - " +
@@ -29,11 +25,7 @@ public class Lesson02 {
 
         for (;;) {
             System.out.print("Type \'w\' for calculations or \'q\' for exit and press \"Enter\" -> ");
-            String str = scanner.next();
-            // выход при нажатии q
-            if("q".equals(str)) {
-                break;
-            }
+            if("q".equals(scanner.next())) break;
 
             x = setValue("x");
             action = choiceOperation();
