@@ -1,4 +1,4 @@
-package lesson02;
+package lesson02.JMXTRY;
 
 public interface JMXMBean {
     void printString();

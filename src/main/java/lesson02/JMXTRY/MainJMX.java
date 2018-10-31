@@ -1,4 +1,4 @@
-package lesson02;
+package lesson02.JMXTRY;
 
 import javax.management.*;
 import java.lang.management.ManagementFactory;

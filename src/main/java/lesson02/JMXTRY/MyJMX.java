@@ -1,4 +1,4 @@
-package lesson02;
+package lesson02.JMXTRY;
 
 public class MyJMX implements JMXMBean {
 

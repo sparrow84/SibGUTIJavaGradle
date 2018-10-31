@@ -1,5 +1,7 @@
 package lesson02;
 
+import lesson02.JMXTRY.MyJMX;
+
 import javax.management.*;
 import java.io.IOException;
 import java.io.InputStreamReader;
