@@ -65,5 +65,12 @@ public class SimpleMBeanServer {
       //registerMBean(mbs, mbean3ObjectNameStr, Status3.class);
 //      System.console().printf("Press ENTER to exit.");
 //      final String dummyValue = System.console().readLine();
+
+      System.out.println("Wait...");
+      try {
+         Thread.sleep(Long.MAX_VALUE);
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+      }
    }
 }
