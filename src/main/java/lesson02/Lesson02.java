@@ -1,13 +1,24 @@
 package lesson02;
 
+import lesson02.JMXTRY.MyJMX;
+
+import javax.management.*;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.management.ManagementFactory;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lesson02 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
+
+        MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
+        ObjectName objectName = new ObjectName("lesson02:type=MyJMX");
+        MyJMX myJMX = new MyJMX();
+        mBeanServer.registerMBean(myJMX, objectName);
+
+
         Scanner scanner = new Scanner(System.in);
         double x;
         double y;
