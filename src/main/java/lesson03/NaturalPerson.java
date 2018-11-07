@@ -4,40 +4,13 @@ import java.util.Date;
 
 public class NaturalPerson extends User {
 
-    private String passportNumber;
-    private String passportSeries;
-    private String placeOfBirth;
-    private Date passportIssueDate;
+    private String profession;
 
-    public String getPassportNumber() {
-        return passportNumber;
+    public String getProfession() {
+        return profession;
     }
 
-    public void setPassportNumber(String passportNumber) {
-        this.passportNumber = passportNumber;
-    }
-
-    public String getPassportSeries() {
-        return passportSeries;
-    }
-
-    public void setPassportSeries(String passportSeries) {
-        this.passportSeries = passportSeries;
-    }
-
-    public String getPlaceOfBirth() {
-        return placeOfBirth;
-    }
-
-    public void setPlaceOfBirth(String placeOfBirth) {
-        this.placeOfBirth = placeOfBirth;
-    }
-
-    public Date getPassportIssueDate() {
-        return passportIssueDate;
-    }
-
-    public void setPassportIssueDate(Date passportIssueDate) {
-        this.passportIssueDate = passportIssueDate;
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 }

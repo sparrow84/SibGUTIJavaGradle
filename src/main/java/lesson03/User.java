@@ -13,6 +13,19 @@ public abstract class User {
     private String district;
     private String street;
     private String room;
+    private String eMail;
+    private String phoneNumber;
+
+
+
+
+
+
+
+
+
+
+
 
     public String getName() {
         return name;
@@ -86,5 +99,19 @@ public abstract class User {
         this.room = room;
     }
 
+    public String geteMail() {
+        return eMail;
+    }
 
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
