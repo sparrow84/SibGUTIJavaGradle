@@ -1,31 +1,41 @@
 package lesson03;
 
-import java.util.Date;
-
 public abstract class User {
 
-    private String name;
-    private String patronymic;
-    private String surname;
-    private Date birthday;
-    private String country;
-    private String city;
-    private String district;
-    private String street;
-    private String room;
-    private String eMail;
-    private String phoneNumber;
+    protected String name;
+    protected String patronymic;
+    protected String surname;
+    protected String phoneNumber;
+    protected String birthday;
+    protected String country;
+    protected String city;
+    protected String district;
+    protected String street;
+    protected String room;
+    protected String eMail;
 
 
 
+    public User(String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail) {
+        this.name = name;
+        this.patronymic = patronymic;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        this.birthday = birthday;
+        this.country = country;
+        this.city = city;
+        this.district = district;
+        this.street = street;
+        this.room = room;
+        this.eMail = eMail;
+    }
 
+    public User() {
+    }
 
-
-
-
-
-
-
+    public static int getCountFields () {
+        return User.class.getDeclaredFields().length;
+    }
 
     public String getName() {
         return name;
@@ -51,11 +61,19 @@ public abstract class User {
         this.surname = surname;
     }
 
-    public Date getBirthday() {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -107,11 +125,4 @@ public abstract class User {
         this.eMail = eMail;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }
