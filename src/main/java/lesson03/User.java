@@ -33,9 +33,10 @@ public abstract class User {
     public User() {
     }
 
-    public static int getCountFields () {
-        return User.class.getDeclaredFields().length;
-    }
+    // Delete useless method
+//    public int getCountFields () {
+//        return this.getClass().getDeclaredFields().length;
+//    }
 
     public String getName() {
         return name;

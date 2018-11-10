@@ -1,6 +1,13 @@
 package lesson03;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
 public class ArtificialPerson extends User {
+
+
+
     private String fullNameOfArtificialPerson;
     private String abbreviatedNameOfArtificialPerson;
 
@@ -28,16 +35,36 @@ public class ArtificialPerson extends User {
 
     }
 
+    /**
+     * Constructor
+     * @param name
+     * @param patronymic
+     * @param surname
+     * @param phoneNumber
+     * @param birthday
+     * @param country
+     * @param city
+     * @param district
+     * @param street
+     * @param room
+     * @param eMail
+     * @param fullNameOfArtificialPerson
+     * @param abbreviatedNameOfArtificialPerson
+     */
     public ArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
         super(name, patronymic, surname, phoneNumber, birthday, country, city, district, street, room, eMail);
         this.fullNameOfArtificialPerson = fullNameOfArtificialPerson;
         this.abbreviatedNameOfArtificialPerson = abbreviatedNameOfArtificialPerson;
     }
 
-
-    public static int getCountFields () {
-        return ArtificialPerson.class.getDeclaredFields().length + User.getCountFields();
+    public Field[] getFields () {
+        return concatenate(this.getClass().getDeclaredFields(), this.getClass().getSuperclass().getDeclaredFields());
     }
+
+    // Delete useless method
+//    public int getCountFields () {
+//        return getFields().length;
+//    }
 
     public String getFullNameOfArtificialPerson() {
         return fullNameOfArtificialPerson;
@@ -55,4 +82,35 @@ public class ArtificialPerson extends User {
         this.abbreviatedNameOfArtificialPerson = abbreviatedNameOfArtificialPerson;
     }
 
+    @Override
+    public String toString() {
+
+        StringBuffer sb = new StringBuffer();
+
+        Field[] fields = this.getFields();
+
+        for (int i = 0; i < fields.length; i++) {
+            sb.append(fields[i].getName() + " = " + fields[i].toString() + "\n");
+        }
+
+
+        return sb.toString();
+    }
+
+
+//    void test (String[] a1, String[] a2) {
+//        concatenate(a1,a2);
+//    }
+
+    public Field[] concatenate (Field[] A, Field[] B) {
+        int aLen = A.length;
+        int bLen = B.length;
+
+        @SuppressWarnings("unchecked")
+        Field[] C = (Field[]) Array.newInstance(A.getClass().getComponentType(), aLen+bLen);
+        System.arraycopy(A, 0, C, 0, aLen);
+        System.arraycopy(B, 0, C, aLen, bLen);
+
+        return C;
+    }
 }
