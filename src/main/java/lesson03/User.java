@@ -2,6 +2,8 @@ package lesson03;
 
 public abstract class User {
 
+//    protected static List<Boolean> idList;
+    protected int id;
     protected String name;
     protected String patronymic;
     protected String surname;
@@ -14,9 +16,12 @@ public abstract class User {
     protected String room;
     protected String eMail;
 
+    public User(int id) {
+        this.id = id;
+    }
 
-
-    public User(String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail) {
+    public User(int id, String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail) {
+        this.id = id;
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -30,13 +35,15 @@ public abstract class User {
         this.eMail = eMail;
     }
 
-    public User() {
-    }
 
-    // Delete useless method
-//    public int getCountFields () {
-//        return this.getClass().getDeclaredFields().length;
-//    }
+
+
+
+
+
+
+
+//  --- Getters and setters ----------------------------------------------------------------
 
     public String getName() {
         return name;
