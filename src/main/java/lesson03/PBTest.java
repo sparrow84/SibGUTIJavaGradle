@@ -1,12 +1,15 @@
 package lesson03;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class PBTest {
     public static void main(String ...args) {
 
 //        Test01();
         Test02();
+//        Test03();
     }
 
     public static void Test01 () {
@@ -14,7 +17,7 @@ public class PBTest {
         String[] arr1 = new String[]{"1","2","3"};
         String[] arr2 = new String[]{"4","5","6"};
 
-        ArtificialPerson ap = new ArtificialPerson();
+        ArtificialPerson ap = new ArtificialPerson(0);
 
         System.out.println("getFields - " + ap.getClass().getFields().length);
 
@@ -30,20 +33,23 @@ public class PBTest {
 
         phoneBook.addArtificialPerson(
                 "Jon",
-                "",
                 "Smith",
                 "+7-999-888-4545",
-                "1984.08.12",
-                "Moonland",
-                "Olymp",
-                "Westmoon",
-                "LuntickStreet",
-                "25",
                 "darkmoon@space.swag",
                 "Public corporation \"moon industrial soft power\"",
                 "PC \"MISP\""
         );
 
-//        System.out.println(phoneBook.);
+
+
+
+        System.out.println(phoneBook.findArtificialPersonById(0));
+    }
+
+
+    public static void Test03 () {
+
+        //
+
     }
 }

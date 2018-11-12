@@ -5,8 +5,8 @@ public class NaturalPerson extends User {
     private String profession;
 
 
-    public NaturalPerson(String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String profession) {
-        super(name, patronymic, surname, phoneNumber, birthday, country, city, district, street, room, eMail);
+    public NaturalPerson(int id, String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String profession) {
+        super(id, name, surname, phoneNumber, eMail);
         this.profession = profession;
     }
 

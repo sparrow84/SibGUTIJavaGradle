@@ -5,19 +5,39 @@ import java.util.List;
 
 public class PhoneBook {
 
-    private List<ArtificialPerson> artificialPersons = new ArrayList<>();
-    private List<NaturalPerson>    naturalPersons    = new ArrayList<>();
+    List<Boolean> idList;
+
+    private List<ArtificialPerson> artificialPersons;
+    private List<NaturalPerson>    naturalPersons;
 
     PhoneBook () {
+        idList = new ArrayList<>();
         artificialPersons = new ArrayList<>();
         naturalPersons = new ArrayList<>();
     }
 
-    public void addArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+    public void addArtificialPerson (String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
 
-        artificialPersons.add(new ArtificialPerson(setIdAP(), name, patronymic, surname, phoneNumber, birthday, country, city, district, street, room, eMail, fullNameOfArtificialPerson, abbreviatedNameOfArtificialPerson));
+        artificialPersons.add(new ArtificialPerson(setIdAP(), name,  surname, phoneNumber, eMail, fullNameOfArtificialPerson, abbreviatedNameOfArtificialPerson));
         //TODO
         // write new person to csv file
+    }
+
+    public List getArtificialPersons () {
+        return artificialPersons;
+    }
+
+    public ArtificialPerson findArtificialPersonById (int id) {
+
+        ArtificialPerson res = null;
+
+        for (int i = 0; i < artificialPersons.size(); i++) {
+            if (artificialPersons.get(i).id == id) {
+                res = artificialPersons.get(i);
+            }
+        }
+
+        return res;
     }
 
     public void delArtificialPerson (int id) {
@@ -36,24 +56,12 @@ public class PhoneBook {
         //TODO
     }
 
-    public void findeArtificialPerson (String[] fieldsAP) {
-        //TODO
 
-        for (int i = 0; i < fieldsAP.length; i++) {
-            if (!"".equals(fieldsAP[i])) {
-                for (int j = 0; j < artificialPersons.size(); j++) {
 
-                }
-            }
-        }
 
-    }
-
-/* FIXME
     private int setIdAP() {
         int res = -1;
-        if (artificialPersons.isEmpty()) {
-
+        if (idList.isEmpty()) {
             idList.add(true);
             res = 0;
         } else {
@@ -71,9 +79,9 @@ public class PhoneBook {
         return res;
     }
 
-    protected static void freeId(int id) {
+    protected void freeId(int id) {
         idList.set(id, false);
     }
-*/
+
 
 }

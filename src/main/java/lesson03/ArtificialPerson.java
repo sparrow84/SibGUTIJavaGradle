@@ -32,21 +32,14 @@ public class ArtificialPerson extends User {
     /**
      * Constructor
      * @param name
-     * @param patronymic
      * @param surname
      * @param phoneNumber
-     * @param birthday
-     * @param country
-     * @param city
-     * @param district
-     * @param street
-     * @param room
      * @param eMail
      * @param fullNameOfArtificialPerson
      * @param abbreviatedNameOfArtificialPerson
      */
-    public ArtificialPerson (int id, String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
-        super(id, name, patronymic, surname, phoneNumber, birthday, country, city, district, street, room, eMail);
+    public ArtificialPerson (int id, String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+        super(id, name, surname, phoneNumber, eMail);
         this.fullNameOfArtificialPerson = fullNameOfArtificialPerson;
         this.abbreviatedNameOfArtificialPerson = abbreviatedNameOfArtificialPerson;
     }
@@ -75,16 +68,11 @@ public class ArtificialPerson extends User {
 
     @Override
     public String toString() {
-        return "name = " + name +
-        "\npatronymic = " + patronymic +
+        return
+        "\nid = " + id +
+        "\nname = " + name +
         "\nsurname = " + surname +
         "\nphoneNumber = " + phoneNumber +
-        "\nbirthday = " + birthday +
-        "\ncountry = " + country +
-        "\ncity = " + city +
-        "\ndistrict = " + district +
-        "\nstreet = " + street +
-        "\nroom = " + room +
         "\neMail = " + eMail +
         "\nfullNameOfArtificialPerson = " + fullNameOfArtificialPerson +
         "\nabbreviatedNameOfArtificialPerson = " + abbreviatedNameOfArtificialPerson;
