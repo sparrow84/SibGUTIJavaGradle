@@ -1,9 +1,5 @@
 package lesson03;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class PBTest {
     public static void main(String ...args) {
 
@@ -43,7 +39,7 @@ public class PBTest {
 
 
 
-        System.out.println(phoneBook.findArtificialPersonById(0));
+        System.out.println(phoneBook.getArtificialPersonById(0));
     }
 
 

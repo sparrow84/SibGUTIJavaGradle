@@ -16,6 +16,10 @@ public class PhoneBook {
         naturalPersons = new ArrayList<>();
     }
 
+    public List getArtificialPersons () {
+        return artificialPersons;
+    }
+
     public void addArtificialPerson (String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
 
         artificialPersons.add(new ArtificialPerson(setIdAP(), name,  surname, phoneNumber, eMail, fullNameOfArtificialPerson, abbreviatedNameOfArtificialPerson));
@@ -23,30 +27,26 @@ public class PhoneBook {
         // write new person to csv file
     }
 
-    public List getArtificialPersons () {
-        return artificialPersons;
-    }
-
-    public ArtificialPerson findArtificialPersonById (int id) {
-
+    public ArtificialPerson getArtificialPersonById(int id) {
         ArtificialPerson res = null;
-
         for (int i = 0; i < artificialPersons.size(); i++) {
             if (artificialPersons.get(i).id == id) {
                 res = artificialPersons.get(i);
             }
         }
-
         return res;
     }
 
     public void delArtificialPerson (int id) {
-
-        //TODO
+        for (int i = 0; i < artificialPersons.size(); i++) {
+            if (artificialPersons.get(i).id == id) {
+                artificialPersons.remove(id);
+            }
+        }
         // delete new person from csv file
     }
 
-    public void delArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+    public void searchArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
 
         //TODO
         // delete new person from csv file
@@ -85,3 +85,23 @@ public class PhoneBook {
 
 
 }
+
+
+
+/*
+
++ add
+
++ get by id
+
+change
+
+search
+
++ del
+
+
+
+
+
+*/
