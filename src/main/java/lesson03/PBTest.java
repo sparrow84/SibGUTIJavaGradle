@@ -30,8 +30,35 @@ public class PBTest {
         phoneBook.addArtificialPerson(
                 "Jon",
                 "Smith",
-                "+7-999-888-4545",
+                "+7-999-888-4541",
                 "darkmoon@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "Pol",
+                "Watson",
+                "+7-999-888-4542",
+                "watson@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "Lisa",
+                "Owerlord",
+                "+7-999-888-4543",
+                "owerlord@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "April",
+                "O'Neel",
+                "+7-999-888-4544",
+                "turtlepower@space.swag",
                 "Public corporation \"moon industrial soft power\"",
                 "PC \"MISP\""
         );
@@ -39,7 +66,14 @@ public class PBTest {
 
 
 
-        System.out.println(phoneBook.getArtificialPersonById(0));
+        System.out.println(phoneBook.getArtificialPersonById(2));
+
+        System.out.println("\n");
+
+        for (ArtificialPerson ap : phoneBook.searchArtificialPerson("","","","","","")
+             ) {
+            System.out.println(ap.getName());
+        }
     }
 
 

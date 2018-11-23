@@ -37,20 +37,22 @@ public class PhoneBook {
         return res;
     }
 
-    public void delArtificialPerson (int id) {
+    public void delArtificialPersonById (int id) {
         for (int i = 0; i < artificialPersons.size(); i++) {
             if (artificialPersons.get(i).id == id) {
                 artificialPersons.remove(id);
             }
         }
+
+        //TODO
         // delete new person from csv file
     }
 
-    public List<ArtificialPerson> searchArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+    public List<ArtificialPerson> searchArtificialPerson (String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
 
         List<ArtificialPerson> res = new ArrayList<>();
 
-        String[] params = { name,  patronymic,  surname,  phoneNumber,  birthday,  country,  city,  district,  street,  room,  eMail,  fullNameOfArtificialPerson,  abbreviatedNameOfArtificialPerson};
+        String[] params = { name,  surname,  phoneNumber,  eMail,  fullNameOfArtificialPerson,  abbreviatedNameOfArtificialPerson};
 
 
         for (int i = 0; i < artificialPersons.size(); i++) {
@@ -60,9 +62,6 @@ public class PhoneBook {
             }
         }
         return res;
-
-
-        // delete new person from csv file
     }
 
     public void changeArtificialPerson () {
@@ -70,6 +69,9 @@ public class PhoneBook {
     }
 
 
+    public void showTableFixedColumnsWidth() {
+        //TODO
+    }
 
 
     private int setIdAP() {
@@ -109,12 +111,12 @@ public class PhoneBook {
 
 change
 
-search
++ search
 
-+ del
++ del by id
 
 
-
+showTableFixedColumnsWidth
 
 
 */

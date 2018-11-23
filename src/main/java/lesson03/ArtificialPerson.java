@@ -51,14 +51,16 @@ public class ArtificialPerson extends User {
     public boolean approximateCompare (String[] searchParams) {
         boolean res = true;
         String[] params = { name,  surname,  phoneNumber,  eMail,  fullNameOfArtificialPerson,  abbreviatedNameOfArtificialPerson};
-        if (searchParams != null && searchParams.length == params.length) {
-            for (int i = 0; i < params.length; i++) {
-                if (!"".equals(searchParams[i]) && !searchParams[i].trim().equalsIgnoreCase(params[i])) {
-                    res = false;
-                    break;
+        if (searchParams != null) {
+            if (searchParams.length == params.length) {
+                for (int i = 0; i < params.length; i++) {
+                    if (!"".equals(searchParams[i]) && !searchParams[i].trim().equalsIgnoreCase(params[i])) {
+                        res = false;
+                        break;
+                    }
                 }
-            }
-        }
+            } else System.err.println(this.getClass().getName() + ".approximateCompare: searchParams wrong length (" + searchParams.length + "). Must be " + params.length);
+        } else System.err.println(this.getClass().getName() + ".approximateCompare: searchParams = null");
         return res;
     }
 
