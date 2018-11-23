@@ -46,9 +46,22 @@ public class PhoneBook {
         // delete new person from csv file
     }
 
-    public void searchArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+    public List<ArtificialPerson> searchArtificialPerson (String name, String patronymic, String surname, String phoneNumber, String birthday, String country, String city, String district, String street, String room, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
 
-        //TODO
+        List<ArtificialPerson> res = new ArrayList<>();
+
+        String[] params = { name,  patronymic,  surname,  phoneNumber,  birthday,  country,  city,  district,  street,  room,  eMail,  fullNameOfArtificialPerson,  abbreviatedNameOfArtificialPerson};
+
+
+        for (int i = 0; i < artificialPersons.size(); i++) {
+
+            if (artificialPersons.get(i).approximateCompare(params)) {
+                res.add(artificialPersons.get(i));
+            }
+        }
+        return res;
+
+
         // delete new person from csv file
     }
 
