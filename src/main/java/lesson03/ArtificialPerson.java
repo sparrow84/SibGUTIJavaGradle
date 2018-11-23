@@ -48,6 +48,20 @@ public class ArtificialPerson extends User {
         return MyUtils.concatenate(this.getClass().getSuperclass().getDeclaredFields(),this.getClass().getDeclaredFields());
     }
 
+    public boolean approximateCompare (String[] searchParams) {
+        boolean res = true;
+        String[] params = { name,  surname,  phoneNumber,  eMail,  fullNameOfArtificialPerson,  abbreviatedNameOfArtificialPerson};
+        if (searchParams != null && searchParams.length == params.length) {
+            for (int i = 0; i < params.length; i++) {
+                if (!"".equals(searchParams[i]) && !searchParams[i].trim().equalsIgnoreCase(params[i])) {
+                    res = false;
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+
     public String getFullNameOfArtificialPerson() {
         return fullNameOfArtificialPerson;
     }
@@ -69,13 +83,13 @@ public class ArtificialPerson extends User {
     @Override
     public String toString() {
         return
-        "\nid = " + id +
-        "\nname = " + name +
-        "\nsurname = " + surname +
-        "\nphoneNumber = " + phoneNumber +
-        "\neMail = " + eMail +
-        "\nfullNameOfArtificialPerson = " + fullNameOfArtificialPerson +
-        "\nabbreviatedNameOfArtificialPerson = " + abbreviatedNameOfArtificialPerson;
+                "\nid = " + id +
+                        "\nname = " + name +
+                        "\nsurname = " + surname +
+                        "\nphoneNumber = " + phoneNumber +
+                        "\neMail = " + eMail +
+                        "\nfullNameOfArtificialPerson = " + fullNameOfArtificialPerson +
+                        "\nabbreviatedNameOfArtificialPerson = " + abbreviatedNameOfArtificialPerson;
     }
 
 
