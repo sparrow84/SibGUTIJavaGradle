@@ -2,7 +2,6 @@ package lesson03;
 
 public abstract class User {
 
-//    protected static List<Boolean> idList;
     protected int id;
     protected String name;
     protected String surname;

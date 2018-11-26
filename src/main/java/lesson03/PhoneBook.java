@@ -69,7 +69,7 @@ public class PhoneBook {
     }
 
 
-    public void showTableFixedColumnsWidth() {
+    public void showTableFixedColumnsWidth(List<User> user, int start, int count) {
         //TODO
     }
 
