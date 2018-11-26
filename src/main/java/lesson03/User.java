@@ -3,10 +3,14 @@ package lesson03;
 public abstract class User {
 
     protected int id;
-    protected String name;
-    protected String surname;
-    protected String phoneNumber;
-    protected String eMail;
+
+    static protected String[] nameParams = {"name", "surname", "phoneNumber", "eMail"};
+    protected String[] params;
+
+//    protected String name;
+//    protected String surname;
+//    protected String phoneNumber;
+//    protected String eMail;
 
     public User(int id) {
         this.id = id;
@@ -14,13 +18,12 @@ public abstract class User {
 
     public User(int id, String name, String surname, String phoneNumber, String eMail) {
         this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.phoneNumber = phoneNumber;
-        this.eMail = eMail;
+        params = new String[nameParams.length];
+        params[0] = name;
+        params[1] = surname;
+        params[2] = phoneNumber;
+        params[3] = eMail;
     }
-
-
 
 
 
@@ -28,35 +31,35 @@ public abstract class User {
 //  --- Getters and setters ----------------------------------------------------------------
 
     public String getName() {
-        return name;
+        return params[0];
     }
 
     public void setName(String name) {
-        this.name = name;
+        params[0] = name;
     }
 
     public String getSurname() {
-        return surname;
+        return params[1];
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+        params[1] = surname;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return params[2];
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        params[2] = phoneNumber;
     }
 
     public String geteMail() {
-        return eMail;
+        return params[3];
     }
 
     public void seteMail(String eMail) {
-        this.eMail = eMail;
+        params[3] = eMail;
     }
 
 }
