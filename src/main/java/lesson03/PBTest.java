@@ -4,8 +4,8 @@ public class PBTest {
     public static void main(String ...args) {
 
 //        Test01();
-        Test02();
-//        Test03();
+//        Test02();
+        Test03();
     }
 
     public static void Test01 () {
@@ -19,7 +19,7 @@ public class PBTest {
 
         System.out.println("getDeclaredFields - " + ap.getClass().getDeclaredFields().length);
 
-        System.out.println("getCountFields - " + ap.getFields().length);
+        System.out.println("getCountFields - " + ap.getNameFields().length);
 
     }
 
@@ -79,7 +79,46 @@ public class PBTest {
 
     public static void Test03 () {
 
-        //
+        PhoneBook phoneBook = new PhoneBook();
+
+        phoneBook.addArtificialPerson(
+                "Jon",
+                "Smith",
+                "+7-999-888-4541",
+                "darkmoon@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "Pol",
+                "Watson",
+                "+7-999-888-4542",
+                "watson@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "Lisa",
+                "Owerlord",
+                "+7-999-888-4543",
+                "owerlord@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+        phoneBook.addArtificialPerson(
+                "April",
+                "O'Neel",
+                "+7-999-888-4544",
+                "turtlepower@space.swag",
+                "Public corporation \"moon industrial soft power\"",
+                "PC \"MISP\""
+        );
+
+
+        phoneBook.showTableFixedColumnsWidth(ArtificialOrNatural.AP,0,0);
 
     }
 }

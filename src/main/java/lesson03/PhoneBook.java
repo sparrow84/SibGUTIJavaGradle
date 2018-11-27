@@ -69,7 +69,32 @@ public class PhoneBook {
     }
 
 
-    public void showTableFixedColumnsWidth(List<User> user, int start, int count) {
+    public void showTableFixedColumnsWidth(ArtificialOrNatural aon, int start, int count) {
+
+        String[] nameFields;
+        List<User> users;
+
+        if (aon.equals(ArtificialOrNatural.AP)) {
+            nameFields = ArtificialPerson.getNameFields();
+            users = new ArrayList<>(artificialPersons);
+        } else {
+            nameFields = NaturalPerson.getNameFields();
+            users = new ArrayList<>(naturalPersons);
+        }
+
+        System.out.printf("| ");
+        for (int i = 0; i < nameFields.length; i++) {
+            System.out.printf("%-25s |", nameFields[i]);
+        }
+        System.out.println();
+
+        if (start > 0 && start < users.size()) {
+
+            //
+
+        }
+
+
         //TODO
     }
 
@@ -100,8 +125,6 @@ public class PhoneBook {
 
 
 }
-
-
 
 /*
 

@@ -44,8 +44,17 @@ public class ArtificialPerson extends User {
         this.abbreviatedNameOfArtificialPerson = abbreviatedNameOfArtificialPerson;
     }
 
-    public Field[] getFields () {
-        return MyUtils.concatenate(this.getClass().getSuperclass().getDeclaredFields(),this.getClass().getDeclaredFields());
+
+
+
+    public static String[] getNameFields () {
+        Field[] fields = MyUtils.concatenate(ArtificialPerson.class.getSuperclass().getDeclaredFields(),ArtificialPerson.class.getDeclaredFields());
+        String[] names = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            names[i] = fields[i].getName();
+        }
+        return names;
+//        return MyUtils.concatenate(this.getClass().getSuperclass().getDeclaredFields(),this.getClass().getDeclaredFields());
     }
 
     public boolean approximateCompare (String[] searchParams) {
@@ -97,10 +106,10 @@ public class ArtificialPerson extends User {
 
     public String toString2() {
         StringBuffer sb = new StringBuffer();
-        Field[] fields = this.getFields();
+        String[] fields = this.getNameFields();
 
         for (int i = 0; i < fields.length; i++) {
-            sb.append(fields[i].getName() + " = zzz" + "\n"); //FIXME
+            sb.append(fields[i] + " = zzz" + "\n"); //FIXME
         }
         return sb.toString();
     }

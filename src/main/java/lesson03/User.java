@@ -1,5 +1,7 @@
 package lesson03;
 
+import java.lang.reflect.Field;
+
 public abstract class User {
 
     protected int id;
@@ -20,7 +22,14 @@ public abstract class User {
         this.eMail = eMail;
     }
 
-
+    public static String[] getNameFields () {
+        Field[] fields = User.class.getDeclaredFields();
+        String[] names = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            names[i] = fields[i].getName();
+        }
+        return names;
+    }
 
 
 
