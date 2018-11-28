@@ -1,6 +1,7 @@
 package lesson03;
 
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
 
 public class PhoneBook {
@@ -9,6 +10,9 @@ public class PhoneBook {
 
     private List<ArtificialPerson> artificialPersons;
     private List<NaturalPerson>    naturalPersons;
+
+    StringBuilder sb = new StringBuilder();
+    Formatter f = new Formatter();
 
     PhoneBook () {
         idList = new ArrayList<>();
@@ -83,10 +87,23 @@ public class PhoneBook {
         }
 
         System.out.printf("| ");
-        for (int i = 0; i < nameFields.length; i++) {
-            System.out.printf("%-25s |", nameFields[i]);
+
+//        StringBuilder sb = new StringBuilder();
+//        Formatter f = new Formatter();
+
+        if (sb.length() > 0) {
+            sb.delete(0, sb.length() - 1);
         }
-        System.out.println();
+        int fill;
+
+        for (int i = 0; i < nameFields.length; i++) {
+            fill = nameFields[i].length() + 1;
+//            sb.append(f.format("%-" + fill + "s | ", nameFields[i]));
+            f = new Formatter();
+            sb.append(f.format("%d",i));
+//            System.out.printf("%-" + fill + "s | ", nameFields[i]);
+        }
+        System.out.println(sb.toString());
 
         if (start > 0 && start < users.size()) {
 
