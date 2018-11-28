@@ -92,19 +92,24 @@ public class PhoneBook {
 //        StringBuilder sb = new StringBuilder();
 //        Formatter f = new Formatter();
 
+        f = new Formatter();
+
         if (sb.length() > 0) {
             sb.delete(0, sb.length() - 1);
         }
-        sb.append(startChars);
+//        sb.append(startChars);
+        f.format(startChars);
         int fill;
 
         for (int i = 0; i < nameFields.length; i++) {
             fill = nameFields[i].length() + 1;
-            f = new Formatter();
-            sb.append(f.format(" %-" + fill + "s |", nameFields[i]));
+            f.format(" %-" + fill + "s |", nameFields[i]);
+//            f = new Formatter();
+//            sb.append(f.format(" %-" + fill + "s |", nameFields[i]));
 //            System.out.printf("%-" + fill + "s | ", nameFields[i]);
         }
-        System.out.println(sb.toString());
+//        System.out.println(sb.toString());
+        System.out.println(f);
         for (int i = 0; i < sb.length(); i++) System.out.print("-");
 
         if (start > -1 && start < users.size()) {
