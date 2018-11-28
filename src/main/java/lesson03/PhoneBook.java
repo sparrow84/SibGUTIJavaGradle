@@ -86,7 +86,8 @@ public class PhoneBook {
             users = new ArrayList<>(naturalPersons);
         }
 
-        System.out.printf("| ");
+        String startChars = "|";
+//        System.out.printf(startChars);
 
 //        StringBuilder sb = new StringBuilder();
 //        Formatter f = new Formatter();
@@ -94,16 +95,21 @@ public class PhoneBook {
         if (sb.length() > 0) {
             sb.delete(0, sb.length() - 1);
         }
+        sb.append(startChars);
         int fill;
 
         for (int i = 0; i < nameFields.length; i++) {
             fill = nameFields[i].length() + 1;
-//            sb.append(f.format("%-" + fill + "s | ", nameFields[i]));
             f = new Formatter();
-            sb.append(f.format("%d",i));
+            sb.append(f.format(" %-" + fill + "s |", nameFields[i]));
 //            System.out.printf("%-" + fill + "s | ", nameFields[i]);
         }
+
         System.out.println(sb.toString());
+
+        for (int i = 0; i < sb.length(); i++) {
+            System.out.print("-");
+        }
 
         if (start > 0 && start < users.size()) {
 
