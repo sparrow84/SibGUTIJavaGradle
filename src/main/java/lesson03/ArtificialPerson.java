@@ -11,24 +11,6 @@ public class ArtificialPerson extends User {
         super(id);
     }
 
-//    public ArtificialPerson (String[] classFields) {
-//        super();
-//
-//        this.name = classFields[0];
-//        this.patronymic = classFields[1];
-//        this.surname = classFields[2];
-//        this.phoneNumber = classFields[3];
-//        this.birthday = classFields[4];
-//        this.country = classFields[5];
-//        this.city = classFields[6];
-//        this.district = classFields[7];
-//        this.street = classFields[8];
-//        this.room = classFields[9];
-//        this.eMail = classFields[10];
-//        this.fullNameOfArtificialPerson = classFields[11];
-//        this.abbreviatedNameOfArtificialPerson = classFields[12];
-//    }
-
     /**
      * Constructor
      * @param name
@@ -38,7 +20,14 @@ public class ArtificialPerson extends User {
      * @param fullNameOfArtificialPerson
      * @param abbreviatedNameOfArtificialPerson
      */
-    public ArtificialPerson (int id, String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {
+    public ArtificialPerson (
+            int id,
+            String name,
+            String surname,
+            String phoneNumber,
+            String eMail,
+            String fullNameOfArtificialPerson,
+            String abbreviatedNameOfArtificialPerson) {
         super(id, name, surname, phoneNumber, eMail);
         this.fullNameOfArtificialPerson = fullNameOfArtificialPerson;
         this.abbreviatedNameOfArtificialPerson = abbreviatedNameOfArtificialPerson;
@@ -93,14 +82,17 @@ public class ArtificialPerson extends User {
 
     @Override
     public String toString() {
-        return
-                "\nid = " + id +
-                        "\nname = " + name +
-                        "\nsurname = " + surname +
-                        "\nphoneNumber = " + phoneNumber +
-                        "\neMail = " + eMail +
-                        "\nfullNameOfArtificialPerson = " + fullNameOfArtificialPerson +
-                        "\nabbreviatedNameOfArtificialPerson = " + abbreviatedNameOfArtificialPerson;
+        return "\nid = " + id +
+               "\nname = " + name +
+               "\nsurname = " + surname +
+               "\nphoneNumber = " + phoneNumber +
+               "\neMail = " + eMail +
+               "\nfullNameOfArtificialPerson = " + fullNameOfArtificialPerson +
+               "\nabbreviatedNameOfArtificialPerson = " + abbreviatedNameOfArtificialPerson;
+    }
+
+    public String[] getArrayParams() {
+        return new String[]{Integer.toString(id),name,surname,phoneNumber,eMail,fullNameOfArtificialPerson,abbreviatedNameOfArtificialPerson};
     }
 
 

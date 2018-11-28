@@ -104,14 +104,10 @@ public class PhoneBook {
             sb.append(f.format(" %-" + fill + "s |", nameFields[i]));
 //            System.out.printf("%-" + fill + "s | ", nameFields[i]);
         }
-
         System.out.println(sb.toString());
+        for (int i = 0; i < sb.length(); i++) System.out.print("-");
 
-        for (int i = 0; i < sb.length(); i++) {
-            System.out.print("-");
-        }
-
-        if (start > 0 && start < users.size()) {
+        if (start > -1 && start < users.size()) {
 
             //
 

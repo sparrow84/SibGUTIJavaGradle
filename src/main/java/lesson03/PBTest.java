@@ -8,6 +8,32 @@ public class PBTest {
         Test03();
     }
 
+    public static void Test03 () {
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        fillPB(phoneBook);
+
+        phoneBook.showTableFixedColumnsWidth(ArtificialOrNatural.AP,0,0);
+
+    }
+
+    public static void Test02 () {
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        fillPB(phoneBook);
+
+        System.out.println(phoneBook.getArtificialPersonById(2));
+
+        System.out.println("\n");
+
+        for (ArtificialPerson ap : phoneBook.searchArtificialPerson("","","","","","")
+        ) {
+            System.out.println(ap.getName());
+        }
+    }
+
     public static void Test01 () {
 
         String[] arr1 = new String[]{"1","2","3"};
@@ -23,10 +49,13 @@ public class PBTest {
 
     }
 
-    public static void Test02 () {
 
-        PhoneBook phoneBook = new PhoneBook();
 
+
+
+
+
+    public static void fillPB (PhoneBook phoneBook) {
         phoneBook.addArtificialPerson(
                 "Jon",
                 "Smith",
@@ -62,63 +91,6 @@ public class PBTest {
                 "Public corporation \"moon industrial soft power\"",
                 "PC \"MISP\""
         );
-
-
-
-
-        System.out.println(phoneBook.getArtificialPersonById(2));
-
-        System.out.println("\n");
-
-        for (ArtificialPerson ap : phoneBook.searchArtificialPerson("","","","","","")
-             ) {
-            System.out.println(ap.getName());
-        }
-    }
-
-
-    public static void Test03 () {
-
-        PhoneBook phoneBook = new PhoneBook();
-
-        phoneBook.addArtificialPerson(
-                "Jon",
-                "Smith",
-                "+7-999-888-4541",
-                "darkmoon@space.swag",
-                "Public corporation \"moon industrial soft power\"",
-                "PC \"MISP\""
-        );
-
-        phoneBook.addArtificialPerson(
-                "Pol",
-                "Watson",
-                "+7-999-888-4542",
-                "watson@space.swag",
-                "Public corporation \"moon industrial soft power\"",
-                "PC \"MISP\""
-        );
-
-        phoneBook.addArtificialPerson(
-                "Lisa",
-                "Owerlord",
-                "+7-999-888-4543",
-                "owerlord@space.swag",
-                "Public corporation \"moon industrial soft power\"",
-                "PC \"MISP\""
-        );
-
-        phoneBook.addArtificialPerson(
-                "April",
-                "O'Neel",
-                "+7-999-888-4544",
-                "turtlepower@space.swag",
-                "Public corporation \"moon industrial soft power\"",
-                "PC \"MISP\""
-        );
-
-
-        phoneBook.showTableFixedColumnsWidth(ArtificialOrNatural.AP,0,0);
 
     }
 }
