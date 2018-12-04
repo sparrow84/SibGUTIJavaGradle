@@ -29,6 +29,8 @@ public class PhoneBook {
         artificialPersons.add(new ArtificialPerson(setIdAP(), name,  surname, phoneNumber, eMail, fullNameOfArtificialPerson, abbreviatedNameOfArtificialPerson));
         //TODO
         // write new person to csv file
+
+
     }
 
     public ArtificialPerson getArtificialPersonById(int id) {

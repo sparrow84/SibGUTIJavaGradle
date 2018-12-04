@@ -5,7 +5,16 @@ public class PBTest {
 
 //        Test01();
 //        Test02();
-        Test03();
+//        Test03();
+        Test04();
+    }
+
+    public static void Test04 () {
+
+        String name = "../MyPhoneBook.csv";
+
+        PBFileHandler pbfh = new PBFileHandler(name);
+
     }
 
     public static void Test03 () {
