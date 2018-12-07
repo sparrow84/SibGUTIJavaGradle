@@ -68,4 +68,8 @@ public abstract class User {
         this.eMail = eMail;
     }
 
+    public String getCSVString() {
+        return "";
+    }
+
 }

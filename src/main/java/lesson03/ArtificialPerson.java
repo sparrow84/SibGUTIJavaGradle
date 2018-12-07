@@ -106,4 +106,8 @@ public class ArtificialPerson extends User {
         return sb.toString();
     }
 
+    @Override
+    public String getCSVString() {
+        return Integer.toString(id) + "," + name + "," + surname + "," + phoneNumber + "," + eMail + "," + fullNameOfArtificialPerson + "," + abbreviatedNameOfArtificialPerson;
+    }
 }

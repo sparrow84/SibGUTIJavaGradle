@@ -22,6 +22,8 @@ public class PBFileHandler {
         }
     }
 
+    public void write() {}
+
     public boolean isExist () {
         return storage.exists();
     }
