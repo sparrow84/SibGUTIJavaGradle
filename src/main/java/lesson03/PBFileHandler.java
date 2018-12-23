@@ -1,6 +1,5 @@
 package lesson03;
 
-import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.File;
@@ -9,12 +8,46 @@ import java.io.IOException;
 
 public class PBFileHandler {
 
+    String name = "../MyPhoneBook.csv";
+    private String csvFile = name;
+    File storage;
+
     CSVWriter writer;
-    String csvFile;
+//    String csvFile;
+
+
+    public PBFileHandler(String csvFile) {
+
+        this.csvFile = csvFile;
+        storage = new File(csvFile);
+
+        try {
+            if (storage.createNewFile())
+                System.out.println("File " + csvFile + " created sucsessful");
+            else
+                System.out.println("File " + csvFile + " already exists");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public PBFileHandler() {
-        // create new file
-        // ...
+
+//        this.csvFile = csvFile;
+        storage = new File(csvFile);
+
+        try {
+            if (storage.createNewFile())
+                System.out.println("File " + csvFile + " created sucsessful");
+            else
+                System.out.println("File " + csvFile + " already exists");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean isExist () {
+        return storage.exists();
     }
 
     public void createNewCSV() {
@@ -26,40 +59,28 @@ public class PBFileHandler {
         }
     }
 
-    public void addRecord(String recordS) {
+    public void addRecord(String newRecord) {
         try {
             writer = new CSVWriter(new FileWriter(csvFile, true));
-            String [] record = recordS.split(",");
+            String [] record = newRecord.split(",");
             writer.writeNext(record);
-            writer.close();
+
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
+    public void removeRecord() {
 
-//    private String filePath;
-//    CSVReader
-//
-//    File storage;
-//
-//    public PBFileHandler(String filePath) {
-//        storage = new File(filePath);
-//
-//        try {
-//            if (storage.createNewFile())
-//                System.out.println("File " + filePath + " created sucsessful");
-//            else
-//                System.out.println("File " + filePath + " already exists");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public void write() {}
-//
-//    public boolean isExist () {
-//        return storage.exists();
-//    }
+    }
+
+
+
 
 }

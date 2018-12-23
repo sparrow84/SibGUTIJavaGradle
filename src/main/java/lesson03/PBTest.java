@@ -5,15 +5,22 @@ public class PBTest {
 
 //        Test01();
 //        Test02();
-//        Test03();
-        Test04();
+        Test03();
+//        Test04();
     }
 
     public static void Test04 () {
 
         String name = "../MyPhoneBook.csv";
+        String newRecord01 = "\"qwe\",\"qwe\",\"qwe\",\"qwe\"";
+        String newRecord02 = "asd,asd,asd,asd";
+        String newRecord03 = "zxc,zxc,zxc,zxc";
 
         PBFileHandler pbfh = new PBFileHandler(name);
+
+        pbfh.addRecord(newRecord01);
+        pbfh.addRecord(newRecord02);
+        pbfh.addRecord(newRecord03);
 
     }
 

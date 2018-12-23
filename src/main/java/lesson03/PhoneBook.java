@@ -14,10 +14,13 @@ public class PhoneBook {
     StringBuilder sb = new StringBuilder();
     Formatter f = new Formatter();
 
+    PBFileHandler pbFileHandler;
+
     PhoneBook () {
         idList = new ArrayList<>();
         artificialPersons = new ArrayList<>();
         naturalPersons = new ArrayList<>();
+        pbFileHandler = new PBFileHandler();
     }
 
     public List getArtificialPersons () {
@@ -29,7 +32,7 @@ public class PhoneBook {
         artificialPersons.add(new ArtificialPerson(setIdAP(), name,  surname, phoneNumber, eMail, fullNameOfArtificialPerson, abbreviatedNameOfArtificialPerson));
         //TODO
         // write new person to csv file
-
+        pbFileHandler.addRecord(artificialPersons.get(artificialPersons.size() - 1).getCSVString());
 
     }
 
