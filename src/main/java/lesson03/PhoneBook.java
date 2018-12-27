@@ -49,12 +49,16 @@ public class PhoneBook {
     public void delArtificialPersonById (int id) {
         for (int i = 0; i < artificialPersons.size(); i++) {
             if (artificialPersons.get(i).id == id) {
-                artificialPersons.remove(id);
+                artificialPersons.remove(i);
+
+                //TODO
+                // delete new person from csv file
+                pbFileHandler.removeRecord(id);
             }
         }
 
-        //TODO
-        // delete new person from csv file
+
+
     }
 
     public List<ArtificialPerson> searchArtificialPerson (String name, String surname, String phoneNumber, String eMail, String fullNameOfArtificialPerson, String abbreviatedNameOfArtificialPerson) {

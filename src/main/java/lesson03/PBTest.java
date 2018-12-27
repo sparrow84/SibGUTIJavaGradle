@@ -5,8 +5,24 @@ public class PBTest {
 
 //        Test01();
 //        Test02();
-        Test03();
+//        Test03();
 //        Test04();
+        Test05();
+    }
+
+    public static void Test05 () {
+        PhoneBook phoneBook = new PhoneBook();
+
+        fillPB(phoneBook);
+
+        System.out.println(phoneBook.getArtificialPersons());
+
+        int id = 2;
+
+        phoneBook.delArtificialPersonById(id);
+
+        System.out.println("\n\n\n");
+        System.out.println(phoneBook.getArtificialPersons());
     }
 
     public static void Test04 () {
